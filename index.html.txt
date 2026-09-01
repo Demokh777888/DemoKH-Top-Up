@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DemoKH - Game Top-Up</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+    }
+
+    header p {
+      margin-top: 6px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    .hero {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .game {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .game p {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 9px;
+      cursor: pointer;
+      margin-top: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>DemoKH</h1>
+    <p>Game Top-Up Website</p>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h2>ស្វាគមន៍មកកាន់ DemoKH 🎮</h2>
+      <p>ជ្រើសរើស Game ដែលអ្នកចង់ Top-Up</p>
+    </section>
+
+    <section class="games">
+
+      <div class="game">
+        <h3>Mobile Legends</h3>
+        <p>MLBB Diamonds</p>
+        <button onclick="alert('MLBB Top-Up Demo')">
+          Top-Up
+        </button>
+      </div>
+
+      <div class="game">
+        <h3>Free Fire</h3>
+        <p>Free Fire Diamonds</p>
+        <button onclick="alert('Free Fire Top-Up Demo')">
+          Top-Up
+        </button>
+      </div>
+
+      <div class="game">
+        <h3>PUBG Mobile</h3>
+        <p>PUBG UC</p>
+        <button onclick="alert('PUBG Top-Up Demo')">
+          Top-Up
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 DemoKH
+  </footer>
+
+</body>
+</html>

@@ -1,136 +1,477 @@
 <!DOCTYPE html>
 <html lang="km">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DemoKH - Game Top-Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<title>DemoKH Top-Up</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#070b18;
+    color:white;
+}
+
+/* HEADER */
+header{
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    background:#0d1429;
+    border-bottom:1px solid #26345d;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#42e8ff;
+}
+
+.header-btn{
+    background:#42e8ff;
+    color:#06101c;
+    padding:9px 14px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    margin:18px;
+    height:300px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+
+    background:
+    linear-gradient(90deg,#050814 5%,transparent 70%),
+    url("https://cdn-media.sforum.vn/storage/app/media/Van%20Pham/3/3a/game-co-op-11.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:absolute;
+    left:25px;
+    top:50%;
+    transform:translateY(-50%);
+    max-width:360px;
+}
+
+.hero-content h1{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.hero-content h1 span{
+    color:#42e8ff;
+}
+
+.hero-content p{
+    color:#d1d8f2;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:#42e8ff;
+    color:#06101c;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+/* SECTION */
+.section{
+    padding:10px 18px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-size:22px;
+}
+
+.section-title span{
+    color:#42e8ff;
+    font-size:13px;
+}
+
+/* GAMES */
+.games{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.game-card{
+    background:#111a34;
+    border:1px solid #27345c;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.game-card:hover{
+    transform:translateY(-5px);
+    border-color:#42e8ff;
+}
+
+.game-img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+}
+
+.game-info{
+    padding:14px;
+}
+
+.game-info h3{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.game-info p{
+    color:#8e9aba;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.topup-btn{
+    width:100%;
+    padding:11px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#42e8ff,#8d7cff);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.feature{
+    background:#111a34;
+    border:1px solid #27345c;
+    border-radius:16px;
+    padding:18px;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.feature h3{
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.feature p{
+    color:#929dbb;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* FOOTER */
+footer{
+    margin-top:30px;
+    padding:25px;
+    text-align:center;
+    color:#7783a5;
+    background:#0b1122;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .hero{
+        height:280px;
+        margin:12px;
     }
 
-    body {
-      background: #f4f6f8;
-      color: #222;
+    .hero-content{
+        left:20px;
+        right:20px;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 22px;
-      text-align: center;
+    .hero-content h1{
+        font-size:27px;
     }
 
-    header h1 {
-      font-size: 30px;
+    .games{
+        grid-template-columns:1fr;
     }
 
-    header p {
-      margin-top: 6px;
+    .game-img{
+        height:200px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 15px;
+    .features{
+        grid-template-columns:1fr;
     }
-
-    .hero {
-      background: white;
-      padding: 28px;
-      border-radius: 16px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-
-    .game {
-      background: white;
-      padding: 22px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .game p {
-      color: #666;
-      margin-top: 8px;
-    }
-
-    button {
-      border: none;
-      background: #2563eb;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 9px;
-      cursor: pointer;
-      margin-top: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>DemoKH</h1>
-    <p>Game Top-Up Website</p>
-  </header>
+<header>
 
-  <main class="container">
+    <div class="logo">
+        Demo<span>KH</span>
+    </div>
 
-    <section class="hero">
-      <h2>ស្វាគមន៍មកកាន់ DemoKH 🎮</h2>
-      <p>ជ្រើសរើស Game ដែលអ្នកចង់ Top-Up</p>
-    </section>
+    <div class="header-btn">
+        TOP-UP
+    </div>
 
-    <section class="games">
+</header>
 
-      <div class="game">
-        <h3>Mobile Legends</h3>
-        <p>MLBB Diamonds</p>
-        <button onclick="alert('MLBB Top-Up Demo')">
-          Top-Up
-        </button>
-      </div>
 
-      <div class="game">
-        <h3>Free Fire</h3>
-        <p>Free Fire Diamonds</p>
-        <button onclick="alert('Free Fire Top-Up Demo')">
-          Top-Up
-        </button>
-      </div>
+<!-- BIG BANNER -->
 
-      <div class="game">
-        <h3>PUBG Mobile</h3>
-        <p>PUBG UC</p>
-        <button onclick="alert('PUBG Top-Up Demo')">
-          Top-Up
-        </button>
-      </div>
+<section class="hero">
 
-    </section>
+    <div class="hero-content">
 
-  </main>
+        <h1>
+            Game <span>Top-Up</span>
+        </h1>
 
-  <footer>
-    © 2026 DemoKH
-  </footer>
+        <p>
+            Top-Up Game របស់អ្នកបានងាយស្រួល
+            ជាមួយ DemoKH 🎮
+        </p>
+
+        <a href="#games" class="hero-btn">
+            ⚡ TOP-UP NOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section class="section" id="games">
+
+    <div class="section-title">
+
+        <h2>🔥 Popular Games</h2>
+
+        <span>View All</span>
+
+    </div>
+
+
+    <div class="games">
+
+
+        <!-- MLBB -->
+
+        <div class="game-card">
+
+            <img
+            class="game-img"
+            src="https://cdn-media.sforum.vn/storage/app/media/Van%20Pham/3/3a/game-co-op-11.jpg"
+            alt="Mobile Legends">
+
+            <div class="game-info">
+
+                <h3>Mobile Legends</h3>
+
+                <p>Diamonds Top-Up</p>
+
+                <button
+                class="topup-btn"
+                onclick="topup('Mobile Legends')">
+
+                TOP-UP NOW
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FREE FIRE -->
+
+        <div class="game-card">
+
+            <img
+            class="game-img"
+            src="https://s.yimg.com/os/es/animal_mx_205/1dd03d0a4440981cd80a0d1902638538"
+            alt="Free Fire">
+
+            <div class="game-info">
+
+                <h3>Free Fire</h3>
+
+                <p>Diamonds Top-Up</p>
+
+                <button
+                class="topup-btn"
+                onclick="topup('Free Fire')">
+
+                TOP-UP NOW
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PUBG -->
+
+        <div class="game-card">
+
+            <img
+            class="game-img"
+            src="https://wallpaperaccess.com/full/3747658.png"
+            alt="PUBG Mobile">
+
+            <div class="game-info">
+
+                <h3>PUBG Mobile</h3>
+
+                <p>UC Top-Up</p>
+
+                <button
+                class="topup-btn"
+                onclick="topup('PUBG Mobile')">
+
+                TOP-UP NOW
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>✨ Why DemoKH?</h2>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⚡</div>
+
+            <h3>Fast Top-Up</h3>
+
+            <p>
+                ប្រព័ន្ធរចនាឲ្យងាយស្រួល
+                និងរហ័ស។
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">💳</div>
+
+            <h3>KHQR / ABA</h3>
+
+            <p>
+                Payment Demo សម្រាប់
+                សាកល្បង Website។
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🔒</div>
+
+            <h3>Simple & Easy</h3>
+
+            <p>
+                ប្រើបានងាយស្រួលលើ
+                ទូរស័ព្ទ Android និង iPhone។
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 DemoKH Top-Up
+    <br><br>
+    Demo Website • Not a real payment service
+
+</footer>
+
+
+<script>
+
+function topup(game){
+
+    alert(
+        "🎮 " + game +
+        "\n\nOrder Page នឹងបើកនៅជំហានបន្ទាប់!"
+    );
+
+}
+
+</script>
 
 </body>
 </html>
